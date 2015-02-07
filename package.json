@@ -1,0 +1,25 @@
+{
+  "name": "proyectoKevin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luisHernandez2/proyectoKevin.git"
+  },
+  "author": "lucho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisHernandez2/proyectoKevin/issues"
+  },
+  "homepage": "https://github.com/luisHernandez2/proyectoKevin",
+  "devDependencies": {
+    "gulp-concat": "^2.4.3",
+    "gulp-jshint": "^1.9.2",
+    "gulp-stylus": "^2.0.0",
+    "gulp-uglify": "^1.1.0"
+  }
+}
