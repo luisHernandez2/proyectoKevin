@@ -1,25 +1,34 @@
 @import "nib"
 vendor-prefixes = webkit o ms moz official
-
+/*
 @font-face {
 	font-family: 'Ancona-Ex-Regular';
 	src: url('font/Ancona-Ex-Regular.eot');
 	src: local('☺'), url('font/Ancona-Ex-Regular.woff') format('woff'), url('font/Ancona-Ex-Regular.ttf') format('truetype'), url('font/Ancona-Ex-Regular.svg') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
-@font-face {
-	font-family: 'Helvetica-neue-lt-std';
-	src: url('font/Helvetica-neue-lt-std.eot');
-	src: local('☺'), url('font/Helvetica-neue-lt-std.woff') format('woff'), url('font/Helvetica-neue-lt-std.ttf') format('truetype'), url('font/Helvetica-neue-lt-std.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+}*/
+
+violeta=rgba(216,0,109,1)
+violeta_claro=rgba(216,0,109,0.6)
+naranja=rgba(226,68,7,1)
+naranja_sombra=rgba(197,56,2,1)
+amarillo=rgba(255,165,9,1)
+azul_fb=rgba(60,90,154,1)
+celeste_tw=rgba(41,197,246,1)
+azul_insta=rgba(75,119,156,1)
+rojo_error=rgb(251,10,42)
+plomo_claro_fondo=#f1f1f1
+plomo_oscuro_letra=rgba(86, 85, 90,1)
+plomo_claro_raya=#E2E2E
+
 body
-	font-family Helvetica-neue-lt-std
+	font-family 'Ubuntu', sans-serif
 	font-size 16px
+	
 a
 	text-decoration none !important
+	
 .contenedor {
 	padding-right: 15px;
 	padding-left: 15px;
@@ -66,5 +75,120 @@ label.error
 	}
 	100% {
 		transform translateX(0)
-	}
+	}	
 }
+ul
+	list-style none
+	padding 0
+	margin 0
+	text-align center
+/* **********************************************
+					HOME	 
+********************************************** */
+.slideMain
+	.slide_list
+		.slide_item
+			position relative
+			background-size cover
+			background-repeat no-repeat		
+			background-position 50%
+			&:before
+					position absolute
+					content ""
+					width 100%
+					height 100%
+					top 0
+					left 0
+					background-image url('../img/grid-suave.png')
+			.contenidoSlide
+				position absolute
+				top 50%
+				left 0%
+				width 100%
+				max-width 300px
+				transform translateY(-50%)
+				text-align center
+				.titulo_slide
+					h2
+					p 
+						font-size 18px
+						color violeta
+						margin auto
+						font-family: 'Lato', sans-serif;
+						span
+							font-weight bold
+				.btnCallAction
+					color #fff
+					font-weight bold
+					background btnCallAction
+@media (min-width:768px)
+	.slideMain
+		.slide_list
+			.slide_item
+				.contenidoSlide
+					max-width 500px
+					h2
+					p
+						font-size 35px
+@media (min-width:992px)
+	.slideMain
+		.slide_list
+			.slide_item
+				.contenidoSlide
+					max-width 700px
+					.titulo_slide
+						h2
+						p
+							font-size 42px
+							/*NAVEGACION DE SERVICIO*/
+.slideTab_list
+	position relative
+	.slideTab_item
+		float left
+		height 50px
+		width 25% 
+		.slideTab_link
+			position relative
+			color #fff
+			display block
+			height 50px
+			line-height 50px
+			overflow hidden
+			&:before
+				position absolute
+				top 0
+				left 0
+				z-index -1
+				width 100%
+				height 100%
+				background #fff
+				color plomo_oscuro_letra
+				content attr(data-hover)
+				transform translateX(-25%)
+				transition transform 0.5s
+			.icoBox
+				display block
+				height 50px
+				line-height 50px
+				background pink
+				transition transform 0.5s
+			&:hover
+			&:active
+				&:before
+					transform translateX(0%)
+				.icoBox
+					transform translateX(100%)
+		&:first-child
+			.icoBox
+				background violeta
+		&:nth-child(2)
+			.icoBox
+				background naranja
+		&:last-child
+			.icoBox
+				background amarillo
+.slideTab_active
+	&:before
+		transform translateX(0%) !important
+	.icoBox
+		transform translateX(100%)

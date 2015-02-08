@@ -14,21 +14,21 @@ var gulp = require('gulp'),
 */
 gulp.task('jsgeneral', function () {
 	gulp.src('js/source/generales/*.js')
-		.pipe(jshint())//revisa los javascrip a ver si hay error
-		.pipe(jshint.reporter('default'))//manda error en consola
-		.pipe(concat('jsgeneral.min.js'))//concatena
-		.pipe(uglify())//minimifica
-		.pipe(gulp.dest('js/build/'))//lo ponemos en la carpeta build
+		.pipe(jshint())/*revisa los javascrip a ver si hay error*/
+		.pipe(jshint.reporter('default'))/*manda error en consola*/
+		.pipe(concat('jsgeneral.min.js'))/*concatena*/
+		.pipe(uglify())/*minimifica*/
+		.pipe(gulp.dest('js/build/'))/*lo ponemos en la carpeta build*/
 });
 /**/
-gulp.task('nib', function(){//mi tarea se llaamra nib
-    gulp.src('./css/style.styl')//entradas stylus, y le decimos que use la libreria nib
+gulp.task('nib', function(){/*mi tarea se llaamra nib*/
+    gulp.src('./css/style.styl')/*entradas stylus, y le decimos que use la libreria nib*/
         .pipe(stylus({ use: [nib()], compress: true }))
         .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('watch', function () {
-	gulp.watch('css/style.styl', ['nib','jsgeneral']);
+	gulp.watch('css/style.styl', ['nib']);
 });
 /*
 js/source/alone.js
